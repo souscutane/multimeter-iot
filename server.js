@@ -20,12 +20,21 @@ app.get('/', function(req, res){
 
 app.get('/on/', function(req, res){
 	digital.digitalWrite(0, digital.HIGH);
-	res.end();	
+	res.send('La led a ete alumee');	
 });
 
 app.get('/off/', function(req, res){
 	digital.digitalWrite(0, digital.LOW);
-	res.end();
+	res.send('la led a ete eteinte');
+});
+
+app.get('/state/', function(req, res){
+	
+	var state =  digital.digitalRead(0);
+	res.json({
+		'state': state
+	});
+
 });
 
 app.listen(5000);

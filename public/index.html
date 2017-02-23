@@ -29,8 +29,9 @@
 
 <div class="row">
       <div class="col s6">
-<a id="on" class="waves-effect waves-light btn">ON</a>
-<a id="off" class="waves-effect waves-light btn">OFF</a>
+		<a id="on" class="waves-effect waves-light btn" href="/on/">ON</a>
+		<a id="off" class="waves-effect waves-light btn" href="/off/">OFF</a>
+		<h4 id="aff"></h4>
 </div>
      
     </div>
@@ -40,23 +41,22 @@
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			
+			$.get('/state/', function(json, status){
+				console.log(json.state);
+if (json.state == 1){
+$("#aff").html('ETAT : ALUME');
+}
+else {
+$("#aff").html('ETAT : ETEINT');
+}
+			});
 
-<script>
-	$(document).ready(function() {
-    $("#on").click(function() {
-        console.log('ON');
-$.get( "/on/", function( data ) {
-});
-    });
-
-
-$("#off").click(function() {
-        console.log('OFF');
-$.get( "/off/", function( data ) {
-});
-    });
-
-	});
-</script>
+		});
+		
+		
+	</script>
     </body>
 </html>
