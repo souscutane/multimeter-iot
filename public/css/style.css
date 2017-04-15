@@ -1,0 +1,36 @@
+h1 {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-weight: 200;
+    border: 3px solid #3498db;
+    border-radius: 5px;
+}
+
+.multi {
+    position: relative;
+    margin: 50px auto;
+    text-align: center;
+    background-image: url('../img/multimetre.jpg');
+    width: 720px;
+    height: 296px;
+}
+.descr {
+    margin: 0 auto;
+    width: 100%;
+    font-style: italic;
+    
+}
+.val {
+    color: white;
+    font-size: 450%;
+    position: absolute;
+    left: 140px;
+    top: 16px;
+}
+
+.unit {
+    font-size: 50%;
+
+}
